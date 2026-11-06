@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/BaraBhai.tsx","./src/components/Dashboard.tsx","./src/components/Landing.tsx","./src/components/SopStudio.tsx","./src/data/countries.ts","./src/lib/baraBhai.ts","./src/lib/sopGenerator.ts","./src/lib/supabase.ts"],"version":"5.9.3"}
