@@ -1,3 +1,4 @@
+import { usePersistentSet } from "./lib/usePersistentSet";
 import { useState } from "react";
 import Landing from "./components/Landing";
 import Dashboard from "./components/Dashboard";
@@ -9,9 +10,8 @@ type View = "landing" | "dashboard" | "sop";
 export default function App() {
   const [view, setView] = useState<View>("landing");
   const [country, setCountry] = useState<CountryData>(COUNTRIES[0]);
-  const [completedDocs, setCompletedDocs] = useState<Set<string>>(new Set());
-  const [sopCompletedFor, setSopCompletedFor] = useState<Set<string>>(new Set());
-
+  const [completedDocs, setCompletedDocs] = usePersistentSet("visabuddy-completed-docs");
+  const [sopCompletedFor, setSopCompletedFor] = usePersistentSet("visabuddy-sop-completed");
   const toggleDoc = (id: string) => {
     setCompletedDocs((prev) => {
       const next = new Set(prev);
